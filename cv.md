@@ -16,6 +16,7 @@ Hardworking beginner programming student with lots of passion for discovering in
 
 ## Code examples
 ```
+//Swift
 func loadData (){
         
         guard let url = URL(string: "http://localhost:8080/api/medication")
@@ -46,7 +47,7 @@ A few projects as university tasks. But the best is yet to come
 ## Education
 
 - 2019 - present – Belarusian State University of Informatics and Radioelectronics, Faculty of Computer-aided Design
-- IT-Academy – UX/UI Designer Advanced
+- IT-Academy – UX/UI Design Advanced
 - Hacking with Swift Online courses
 
 ## English
