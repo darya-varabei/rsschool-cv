@@ -1,0 +1,7 @@
+13:25:38 **** Build of configuration Default for project LED_Display ****
+make all 
+make: *** No rule to make target `all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+13:25:39 Build Failed. 1 errors, 0 warnings. (took 433ms)
+

@@ -1,0 +1,190 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+TimingDelay         0x4               startup_sam3n.o
+ITM_RxBuffer        0x4               main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00400000         0x00040000         xr
+ram              0x20000000         0x00006000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD startup_sam3n.o
+LOAD main.o
+LOAD ../cm3/SPL/src/pio.o
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/4.6 2012q4/bin/../lib/gcc/arm-none-eabi/4.6.2/armv7-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.6 2012q4/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libg.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.6 2012q4/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libc.a
+END GROUP
+                [0x00000800]                __stack_size__ = DEFINED (__stack_size__)?__stack_size__:0x800
+
+.text           0x00400000      0x930
+                0x00400000                . = ALIGN (0x4)
+                0x00400000                _sfixed = .
+ *(.vectors .vectors.*)
+ .vectors       0x00400000       0xc4 startup_sam3n.o
+                0x00400000                exception_table
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x004000c4      0x110 startup_sam3n.o
+                0x004000c4                Reset_Handler
+                0x00400168                IntDefaultHandler
+                0x004001a4                Delay
+ .text          0x004001d4      0x298 main.o
+                0x00400294                main
+ .text          0x0040046c      0x384 ../cm3/SPL/src/pio.o
+                0x00400600                PIO_Configure
+                0x0040073c                PIO_Set
+                0x00400758                PIO_Clear
+                0x00400774                PIO_Get
+                0x004007c0                PIO_GetOutputDataStatus
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.rodata .rodata* .gnu.linkonce.r.*)
+ .rodata        0x004007f0      0x140 main.o
+                0x004007f0                LedControlPins
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00400930                . = ALIGN (0x4)
+ *(.init)
+                0x00400930                . = ALIGN (0x4)
+                0x00400930                __preinit_array_start = .
+ *(.preinit_array)
+                0x00400930                __preinit_array_end = .
+                0x00400930                . = ALIGN (0x4)
+                0x00400930                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x00400930                __init_array_end = .
+                0x00400930                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x00400930                . = ALIGN (0x4)
+ *(.fini)
+                0x00400930                . = ALIGN (0x4)
+                0x00400930                __fini_array_start = .
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x00400930                __fini_array_end = .
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x00400930                . = ALIGN (0x4)
+                0x00400930                _efixed = .
+                0x00400930                PROVIDE (__exidx_start, .)
+
+.vfp11_veneer   0x00400930        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00400930        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00400930                PROVIDE (__exidx_end, .)
+                0x00400930                . = ALIGN (0x4)
+                0x00400930                _etext = .
+
+.relocate       0x20000000       0x18 load address 0x00400930
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _srelocate = .
+ *(.ramfunc .ramfunc.*)
+ *(.data .data.*)
+ .data          0x20000000        0x0 startup_sam3n.o
+ .data          0x20000000       0x18 main.o
+ .data          0x20000018        0x0 ../cm3/SPL/src/pio.o
+                0x20000018                . = ALIGN (0x4)
+                0x20000018                _erelocate = .
+
+.bss            0x20000018        0x8 load address 0x00400948
+                0x20000018                . = ALIGN (0x4)
+                0x20000018                _sbss = .
+                0x20000018                _szero = .
+ *(.bss .bss.*)
+ .bss           0x20000018        0x0 startup_sam3n.o
+ .bss           0x20000018        0x0 main.o
+ .bss           0x20000018        0x0 ../cm3/SPL/src/pio.o
+ *(COMMON)
+ COMMON         0x20000018        0x4 startup_sam3n.o
+                0x20000018                TimingDelay
+ COMMON         0x2000001c        0x4 main.o
+                0x2000001c                ITM_RxBuffer
+                0x20000020                . = ALIGN (0x4)
+                0x20000020                _ebss = .
+                0x20000020                _ezero = .
+
+.stack          0x20000020      0x800 load address 0x00400950
+                0x20000020                . = ALIGN (0x8)
+                0x20000020                _sstack = .
+                0x20000820                . = (. + __stack_size__)
+ *fill*         0x20000020      0x800 00
+                0x20000820                . = ALIGN (0x8)
+                0x20000820                _estack = .
+                0x20000820                . = ALIGN (0x4)
+                0x20000820                _end = .
+OUTPUT(MMVP_LW1_ATSAM3N4C_LedDisplay.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x1e5c
+ .debug_info    0x00000000      0x40c startup_sam3n.o
+ .debug_info    0x0000040c      0xff5 main.o
+ .debug_info    0x00001401      0xa5b ../cm3/SPL/src/pio.o
+
+.debug_abbrev   0x00000000      0x495
+ .debug_abbrev  0x00000000      0x12f startup_sam3n.o
+ .debug_abbrev  0x0000012f      0x1d4 main.o
+ .debug_abbrev  0x00000303      0x192 ../cm3/SPL/src/pio.o
+
+.debug_loc      0x00000000      0x394
+ .debug_loc     0x00000000       0xbc startup_sam3n.o
+ .debug_loc     0x000000bc       0xa8 main.o
+ .debug_loc     0x00000164      0x230 ../cm3/SPL/src/pio.o
+
+.debug_aranges  0x00000000       0x60
+ .debug_aranges
+                0x00000000       0x20 startup_sam3n.o
+ .debug_aranges
+                0x00000020       0x20 main.o
+ .debug_aranges
+                0x00000040       0x20 ../cm3/SPL/src/pio.o
+
+.debug_line     0x00000000      0x410
+ .debug_line    0x00000000      0x12c startup_sam3n.o
+ .debug_line    0x0000012c      0x1d1 main.o
+ .debug_line    0x000002fd      0x113 ../cm3/SPL/src/pio.o
+
+.debug_str      0x00000000      0x9e2
+ .debug_str     0x00000000      0x1ef startup_sam3n.o
+                                0x231 (size before relaxing)
+ .debug_str     0x000001ef      0x60b main.o
+                                0x79a (size before relaxing)
+ .debug_str     0x000007fa      0x1e8 ../cm3/SPL/src/pio.o
+                                0x585 (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 startup_sam3n.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 main.o
+ .comment       0x00000000       0x71 ../cm3/SPL/src/pio.o
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x33 startup_sam3n.o
+ .ARM.attributes
+                0x00000033       0x33 main.o
+ .ARM.attributes
+                0x00000066       0x33 ../cm3/SPL/src/pio.o
+
+.debug_frame    0x00000000      0x214
+ .debug_frame   0x00000000       0x7c startup_sam3n.o
+ .debug_frame   0x0000007c       0x6c main.o
+ .debug_frame   0x000000e8      0x12c ../cm3/SPL/src/pio.o

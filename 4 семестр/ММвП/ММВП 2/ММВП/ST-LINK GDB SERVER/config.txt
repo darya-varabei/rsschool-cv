@@ -1,0 +1,50 @@
+###############################################################
+#### ST-LINK_gdbserver - Sample Configuration File
+#### Each Line Contains one argument
+#### Comment lines begin with #
+####
+#### Use option -c <config-file> to start with config file
+#### E.g. ST-LINK_gdbserver -c config.txt
+###############################################################
+
+###############################################################
+#  -e                 : Enables persistant mode
+###############################################################
+-e
+
+###############################################################
+#  -f <Log-File>      : Name of log file. Please make sure 
+#                       that directory not is write protected.
+#                     : Example
+#  -f c:\tmp\debug.log
+###############################################################
+
+###############################################################
+#  -l <Log-Level>     : Logging level between 0 & 31 
+#          0            Disables logging
+#          >=1          Enables logging of error messages
+#          >=2          Adds warning messages
+#          >=4          Adds communication specific messages
+#          >=8          Adds all information messages
+#          >=16         Adds all HW specific messages 
+###############################################################
+-l 31
+
+###############################################################
+#  -p <Port-Number>   : TCP-Listen Port-Number.
+###############################################################
+-p 61234
+
+###############################################################
+#  -v                 : Enables verbose mode
+###############################################################
+-v
+
+###############################################################
+#  -r <delay-sec>     : Maximum Delay in status refresh
+###############################################################
+-r 120
+###############################################################
+#  -d		      : Enable SWD Debug Mode
+###############################################################
+-d

@@ -1,0 +1,28 @@
+10:25:27 **** Build of configuration Default for project Lab_1_1 ****
+make all 
+
+-------- begin --------
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb startup_sam3n.c -o startup_sam3n.o
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb main.c -o main.o
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb newlib_stubs.c -o newlib_stubs.o
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb image.c -o image.o
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb ../cm3/SPL/src/pmc.c -o ../cm3/SPL/src/pmc.o
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb ../cm3/SPL/src/pio.c -o ../cm3/SPL/src/pio.o
+arm-none-eabi-gcc -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb startup_sam3n.o main.o newlib_stubs.o image.o ../cm3/SPL/src/pmc.o ../cm3/SPL/src/pio.o -nostartfiles -Xlinker -oLab_1_1.elf -Xlinker -M -Xlinker -Map=Lab_1_1.map
+arm-none-eabi-objcopy Lab_1_1.elf -O ihex Lab_1_1.hex
+arm-none-eabi-size --format=berkeley Lab_1_1.elf
+   text	   data	    bss	    dec	    hex	filename
+  39932	   2500	   2156	  44588	   ae2c	Lab_1_1.elf
+Errors: none
+
+------ Moving output files into Debug folder ------
+
+mv -f startup_sam3n.o main.o newlib_stubs.o image.o ../cm3/SPL/src/pmc.o ../cm3/SPL/src/pio.o Debug
+mv -f Lab_1_1.elf Debug
+mv -f Lab_1_1.hex Debug
+mv -f Lab_1_1.map Debug
+-------- end --------
+
+
+10:25:30 Build Finished. 0 errors, 0 warnings. (took 2s.940ms)
+

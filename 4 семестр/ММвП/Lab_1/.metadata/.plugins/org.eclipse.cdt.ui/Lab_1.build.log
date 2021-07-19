@@ -1,0 +1,7 @@
+09:50:20 **** Incremental Build of configuration Default for project Lab_1 ****
+make all 
+make: *** No rule to make target `all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+09:50:21 Build Failed. 1 errors, 0 warnings. (took 375ms)
+

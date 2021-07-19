@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;MMVP_LW1_GPIO_OUT/Info.c&apos;" deleteContents="false" description="Delete resource &apos;MMVP_LW1_GPIO_OUT/Info.c&apos;" element1="/MMVP_LW1_GPIO_OUT/Info.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1618338776345"/>
+</session>

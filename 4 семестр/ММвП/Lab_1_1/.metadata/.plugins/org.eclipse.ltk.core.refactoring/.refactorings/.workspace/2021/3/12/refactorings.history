@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;MMVP_LW1_ATSAM3N4C_LedDisplay&apos;" deleteContents="false" description="Delete resource &apos;MMVP_LW1_ATSAM3N4C_LedDisplay&apos;" element1="/MMVP_LW1_ATSAM3N4C_LedDisplay" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1616939344840"/>
+</session>

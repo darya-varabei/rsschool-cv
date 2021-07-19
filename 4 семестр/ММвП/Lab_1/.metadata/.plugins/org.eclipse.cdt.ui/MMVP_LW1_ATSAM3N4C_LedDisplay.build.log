@@ -1,0 +1,7 @@
+20:17:26 **** Incremental Build of configuration Default for project MMVP_LW1_ATSAM3N4C_LedDisplay ****
+make all 
+make: *** No rule to make target `all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+20:17:26 Build Failed. 1 errors, 0 warnings. (took 190ms)
+

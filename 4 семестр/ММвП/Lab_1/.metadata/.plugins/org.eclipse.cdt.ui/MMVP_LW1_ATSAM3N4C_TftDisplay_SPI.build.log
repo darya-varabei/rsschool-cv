@@ -1,0 +1,12 @@
+09:42:40 **** Incremental Build of configuration Default for project MMVP_LW1_ATSAM3N4C_TftDisplay_SPI ****
+make all 
+
+-------- begin --------
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb startup_sam3n.c -o startup_sam3n.o
+startup_sam3n.c:45:26: fatal error: system_sam3n.h: No such file or directory
+compilation terminated.
+make: *** [startup_sam3n.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+09:42:41 Build Failed. 2 errors, 0 warnings. (took 841ms)
+

@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/0.953051535/Path/delimiter=;
+environment/project/0.953051535/Path/operation=append
+environment/project/0.953051535/Path/value=${PATH}
+environment/project/0.953051535/append=true
+environment/project/0.953051535/appendContributed=true

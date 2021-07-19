@@ -1,0 +1,16 @@
+#include <errno.h>
+#include <sys/stat.h>
+#include <sys/times.h>
+#include <sys/unistd.h>
+#include <sys/reent.h>
+#ifndef STDOUT_USART
+#define STDOUT_USART	2
+#endif
+
+#ifndef STDERR_USART
+#define STDERR_USART	2
+#endif
+
+#ifndef STDIN_USART
+#define STDIN_USART		2
+#endif

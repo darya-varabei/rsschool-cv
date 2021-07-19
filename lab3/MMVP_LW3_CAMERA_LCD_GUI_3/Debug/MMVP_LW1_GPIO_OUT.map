@@ -1,0 +1,422 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                              ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o (__aeabi_ui2d)
+c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                              ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o (__aeabi_dcmplt)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00100000         xr
+SRAM             0x20000000         0x00020000         xrw
+CCMRAM           0x10000000         0x00010000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD main.o
+LOAD startup.o
+LOAD Info.o
+LOAD ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+LOAD ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+LOAD ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+LOAD ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+LOAD ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+LOAD ../Libraries/STM32F4-Discovery/src/fonts.o
+START GROUP
+LOAD c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a
+LOAD c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libg.a
+LOAD c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a
+END GROUP
+
+.text           0x08000000    0x33864
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x188 startup.o
+                0x08000000                g_pfnVectors
+ *(.text*)
+ .text          0x08000188     0x1054 main.o
+                0x08001074                main
+                0x0800114c                ShowImage
+ .text          0x080011dc     0x1054 startup.o
+                0x080020c8                ResetISR
+                0x08002174                Delay
+                0x080021a0                ResetTickCountRed
+                0x080021b8                ResetTickCountGreen
+                0x080021d0                ResetTickCountBlue
+                0x080021e8                GetTickCountRed
+                0x08002200                GetTickCountGreen
+                0x08002218                GetTickCountBlue
+ .text          0x08002230        0x0 Info.o
+ .text          0x08002230     0x1188 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+                0x0800311c                SystemInit
+                0x08003188                SystemCoreClockUpdate
+ .text          0x080033b8     0x19d4 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+                0x080042a4                RCC_DeInit
+                0x080042f4                RCC_HSEConfig
+                0x0800431c                RCC_WaitForHSEStartUp
+                0x0800436c                RCC_AdjustHSICalibrationValue
+                0x080043a8                RCC_HSICmd
+                0x080043c8                RCC_LSEConfig
+                0x0800440c                RCC_LSICmd
+                0x0800442c                RCC_PLLConfig
+                0x0800446c                RCC_PLLCmd
+                0x0800448c                RCC_PLLI2SConfig
+                0x080044b8                RCC_PLLI2SCmd
+                0x080044d8                RCC_ClockSecuritySystemCmd
+                0x080044f8                RCC_MCO1Config
+                0x08004538                RCC_MCO2Config
+                0x08004578                RCC_SYSCLKConfig
+                0x080045b0                RCC_GetSYSCLKSource
+                0x080045d0                RCC_HCLKConfig
+                0x08004608                RCC_PCLK1Config
+                0x08004640                RCC_PCLK2Config
+                0x0800467c                RCC_GetClocksFreq
+                0x080047d8                RCC_RTCCLKConfig
+                0x08004834                RCC_RTCCLKCmd
+                0x08004854                RCC_BackupResetCmd
+                0x08004874                RCC_I2SCLKConfig
+                0x08004894                RCC_AHB1PeriphClockCmd
+                0x080048d4                RCC_AHB2PeriphClockCmd
+                0x08004914                RCC_AHB3PeriphClockCmd
+                0x08004954                RCC_APB1PeriphClockCmd
+                0x08004994                RCC_APB2PeriphClockCmd
+                0x080049d4                RCC_AHB1PeriphResetCmd
+                0x08004a14                RCC_AHB2PeriphResetCmd
+                0x08004a54                RCC_AHB3PeriphResetCmd
+                0x08004a94                RCC_APB1PeriphResetCmd
+                0x08004ad4                RCC_APB2PeriphResetCmd
+                0x08004b14                RCC_AHB1PeriphClockLPModeCmd
+                0x08004b54                RCC_AHB2PeriphClockLPModeCmd
+                0x08004b94                RCC_AHB3PeriphClockLPModeCmd
+                0x08004bd4                RCC_APB1PeriphClockLPModeCmd
+                0x08004c14                RCC_APB2PeriphClockLPModeCmd
+                0x08004c54                RCC_ITConfig
+                0x08004ca0                RCC_GetFlagStatus
+                0x08004d14                RCC_ClearFlag
+                0x08004d34                RCC_GetITStatus
+                0x08004d6c                RCC_ClearITPendingBit
+ .text          0x08004d8c     0x1380 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+                0x08005c78                GPIO_DeInit
+                0x08005d98                GPIO_Init
+                0x08005eb6                GPIO_StructInit
+                0x08005eea                GPIO_PinLockConfig
+                0x08005f2e                GPIO_ReadInputDataBit
+                0x08005f62                GPIO_ReadInputData
+                0x08005f7c                GPIO_ReadOutputDataBit
+                0x08005fb0                GPIO_ReadOutputData
+                0x08005fca                GPIO_SetBits
+                0x08005fe8                GPIO_ResetBits
+                0x08006006                GPIO_WriteBit
+                0x08006036                GPIO_Write
+                0x08006054                GPIO_ToggleBits
+                0x08006078                GPIO_PinAFConfig
+ .text          0x0800610c     0x1858 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+                0x08006ff8                FSMC_NORSRAMDeInit
+                0x08007050                FSMC_NORSRAMInit
+                0x0800718c                FSMC_NORSRAMStructInit
+                0x08007262                FSMC_NORSRAMCmd
+                0x080072b8                FSMC_NANDDeInit
+                0x08007314                FSMC_NANDInit
+                0x080073e4                FSMC_NANDStructInit
+                0x08007462                FSMC_NANDCmd
+                0x080074d0                FSMC_NANDECCCmd
+                0x0800753c                FSMC_GetECC
+                0x08007574                FSMC_PCCARDDeInit
+                0x080075ac                FSMC_PCCARDInit
+                0x08007658                FSMC_PCCARDStructInit
+                0x080076de                FSMC_PCCARDCmd
+                0x0800771c                FSMC_ITConfig
+                0x080077bc                FSMC_GetFlagStatus
+                0x08007820                FSMC_ClearFlag
+                0x08007880                FSMC_GetITStatus
+                0x08007900                FSMC_ClearITPendingBit
+ .text          0x08007964     0x2828 ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+                0x08008850                LCD_DeInit
+                0x08008a94                LCD_CtrlLinesConfig
+                0x08008bf4                LCD_FSMCConfig
+                0x08008c76                STM32f4_Discovery_LCD_Init
+                0x08008de8                LCD_SetCursor
+                0x08008e14                LCD_WriteReg
+                0x08008e44                LCD_ReadReg
+                0x08008e70                LCD_WriteRAM_Prepare
+                0x08008e86                LCD_WriteRAM
+                0x08008ea8                LCD_ReadRAM
+                0x08008ec0                LCD_RGB_Test
+                0x08008f2c                LCD_SetColors
+                0x08008f60                LCD_GetColors
+                0x08008f94                LCD_SetTextColor
+                0x08008fb8                LCD_SetBackColor
+                0x08008fdc                LCD_DisplayOff
+                0x08008fea                LCD_DisplayOn
+                0x08008ff8                LCD_SetFont
+                0x08009018                LCD_GetFont
+                0x08009030                LCD_ClearLine
+                0x0800906c                LCD_Clear
+                0x080090f8                LCD_DrawChar
+                0x08009200                LCD_DisplayChar
+                0x08009288                LCD_DisplayStringLine
+                0x080092dc                LCD_SetDisplayWindow
+                0x08009374                LCD_WindowModeDisable
+                0x08009382                LCD_DrawLine
+                0x08009420                LCD_DrawRect
+                0x0800948c                LCD_DrawCircle
+                0x0800964c                LCD_DrawMonoPict
+                0x080096d4                LCD_WriteBMP
+                0x080096e8                LCD_DrawFullRect
+                0x080097a4                LCD_DrawFullCircle
+                0x080098cc                LCD_DrawUniLine
+                0x08009a4c                LCD_PolyLine
+                0x08009b58                LCD_ClosedPolyLine
+                0x08009bb4                LCD_PolyLineRelative
+                0x08009bd4                LCD_ClosedPolyLineRelative
+                0x08009bf4                LCD_FillPolyLine
+                0x0800a158                delay
+ .text          0x0800a18c        0x0 ../Libraries/STM32F4-Discovery/src/fonts.o
+ .text          0x0800a18c      0x378 c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                0x0800a18c                __aeabi_drsub
+                0x0800a194                __aeabi_dsub
+                0x0800a194                __subdf3
+                0x0800a198                __aeabi_dadd
+                0x0800a198                __adddf3
+                0x0800a410                __floatunsidf
+                0x0800a410                __aeabi_ui2d
+                0x0800a430                __floatsidf
+                0x0800a430                __aeabi_i2d
+                0x0800a454                __aeabi_f2d
+                0x0800a454                __extendsfdf2
+                0x0800a498                __floatundidf
+                0x0800a498                __aeabi_ul2d
+                0x0800a4a8                __floatdidf
+                0x0800a4a8                __aeabi_l2d
+ .text          0x0800a504      0x110 c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                0x0800a504                __gtdf2
+                0x0800a504                __gedf2
+                0x0800a50c                __ltdf2
+                0x0800a50c                __ledf2
+                0x0800a514                __nedf2
+                0x0800a514                __eqdf2
+                0x0800a514                __cmpdf2
+                0x0800a590                __aeabi_cdrcmple
+                0x0800a5a0                __aeabi_cdcmpeq
+                0x0800a5a0                __aeabi_cdcmple
+                0x0800a5b0                __aeabi_dcmpeq
+                0x0800a5c4                __aeabi_dcmplt
+                0x0800a5d8                __aeabi_dcmple
+                0x0800a5ec                __aeabi_dcmpge
+                0x0800a600                __aeabi_dcmpgt
+ *(.rodata*)
+ .rodata        0x0800a614        0x6 main.o
+                0x0800a614                arGPIO_Pins
+ *fill*         0x0800a61a        0x2 
+ .rodata        0x0800a61c    0x25808 Info.o
+                0x0800a61c                gImage_Info
+ .rodata        0x0802fe24     0x3a40 ../Libraries/STM32F4-Discovery/src/fonts.o
+                0x0802fe24                ASCII16x24_Table
+                0x08031c54                ASCII12x12_Table
+                0x08032554                ASCII8x12_Table
+                0x08032e54                ASCII8x8_Table
+ *(.eh_frame)
+                0x08033864                _etext = .
+
+.glue_7         0x08033864        0x0
+ .glue_7        0x08033864        0x0 linker stubs
+
+.glue_7t        0x08033864        0x0
+ .glue_7t       0x08033864        0x0 linker stubs
+
+.vfp11_veneer   0x08033864        0x0
+ .vfp11_veneer  0x08033864        0x0 linker stubs
+
+.v4_bx          0x08033864        0x0
+ .v4_bx         0x08033864        0x0 linker stubs
+
+.iplt           0x08033864        0x0
+ .iplt          0x08033864        0x0 main.o
+
+.rel.dyn        0x08033864        0x0
+ .rel.iplt      0x08033864        0x0 main.o
+
+.ARM            0x08033864        0x0
+                0x08033864                __exidx_start = .
+ *(.ARM.exidx*)
+                0x08033864                __exidx_end = .
+                0x08033864                _sidata = .
+
+.data           0x20000000       0x48 load address 0x08033864
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data*)
+ .data          0x20000000        0x0 main.o
+ .data          0x20000000        0x0 startup.o
+ .data          0x20000000        0x0 Info.o
+ .data          0x20000000       0x14 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+                0x20000000                SystemCoreClock
+                0x20000004                AHBPrescTable
+ .data          0x20000014       0x10 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .data          0x20000024        0x0 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .data          0x20000024        0x0 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .data          0x20000024        0x2 ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ *fill*         0x20000026        0x2 
+ .data          0x20000028       0x20 ../Libraries/STM32F4-Discovery/src/fonts.o
+                0x20000028                Font16x24
+                0x20000030                Font12x12
+                0x20000038                Font8x12
+                0x20000040                Font8x8
+ .data          0x20000048        0x0 c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .data          0x20000048        0x0 c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                0x20000048                _edata = .
+
+.igot.plt       0x20000048        0x0 load address 0x080338ac
+ .igot.plt      0x20000048        0x0 main.o
+
+.bss            0x20000048      0x212 load address 0x080338ac
+                0x20000048                . = ALIGN (0x4)
+                0x20000048                _sbss = .
+ *(COMMON)
+ *(.bss*)
+ .bss           0x20000048       0x1c main.o
+                0x20000048                ITM_RxBuffer
+                0x2000004c                RCC_Clocks
+                0x2000005c                InfoImage_coor
+ .bss           0x20000064      0x1f0 startup.o
+                0x20000244                TimingDelay
+                0x20000248                tickRed
+                0x2000024c                tickGreen
+                0x20000250                tickBlue
+ .bss           0x20000254        0x0 Info.o
+ .bss           0x20000254        0x0 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+ .bss           0x20000254        0x0 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .bss           0x20000254        0x0 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .bss           0x20000254        0x0 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .bss           0x20000254        0x6 ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ .bss           0x2000025a        0x0 ../Libraries/STM32F4-Discovery/src/fonts.o
+ .bss           0x2000025a        0x0 c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x2000025a        0x0 c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                0x2000025a                _ebss = .
+
+.ccmem
+ *(.ccm)
+OUTPUT(MMVP_LW1_GPIO_OUT.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000    0x11abf
+ .debug_info    0x00000000     0x243d main.o
+ .debug_info    0x0000243d     0x22cd startup.o
+ .debug_info    0x0000470a       0x5b Info.o
+ .debug_info    0x00004765     0x2458 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+ .debug_info    0x00006bbd     0x2d09 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .debug_info    0x000098c6     0x2662 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .debug_info    0x0000bf28     0x2987 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .debug_info    0x0000e8af     0x304f ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ .debug_info    0x000118fe      0x1c1 ../Libraries/STM32F4-Discovery/src/fonts.o
+
+.debug_abbrev   0x00000000     0x173b
+ .debug_abbrev  0x00000000      0x31d main.o
+ .debug_abbrev  0x0000031d      0x301 startup.o
+ .debug_abbrev  0x0000061e       0x47 Info.o
+ .debug_abbrev  0x00000665      0x2d9 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+ .debug_abbrev  0x0000093e      0x363 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .debug_abbrev  0x00000ca1      0x32c ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .debug_abbrev  0x00000fcd      0x30f ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .debug_abbrev  0x000012dc      0x39e ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ .debug_abbrev  0x0000167a       0xc1 ../Libraries/STM32F4-Discovery/src/fonts.o
+
+.debug_aranges  0x00000000      0x110
+ .debug_aranges
+                0x00000000       0x20 main.o
+ .debug_aranges
+                0x00000020       0x20 startup.o
+ .debug_aranges
+                0x00000040       0x18 Info.o
+ .debug_aranges
+                0x00000058       0x20 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+ .debug_aranges
+                0x00000078       0x20 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .debug_aranges
+                0x00000098       0x20 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .debug_aranges
+                0x000000b8       0x20 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .debug_aranges
+                0x000000d8       0x20 ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ .debug_aranges
+                0x000000f8       0x18 ../Libraries/STM32F4-Discovery/src/fonts.o
+
+.debug_line     0x00000000     0x5781
+ .debug_line    0x00000000      0x965 main.o
+ .debug_line    0x00000965      0x901 startup.o
+ .debug_line    0x00001266       0x27 Info.o
+ .debug_line    0x0000128d      0xa14 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+ .debug_line    0x00001ca1      0xd9e ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .debug_line    0x00002a3f      0xae8 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .debug_line    0x00003527      0xed7 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .debug_line    0x000043fe     0x122b ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ .debug_line    0x00005629      0x158 ../Libraries/STM32F4-Discovery/src/fonts.o
+
+.debug_str      0x00000000     0x236c
+ .debug_str     0x00000000      0xf05 main.o
+                                0xf90 (size before relaxing)
+ .debug_str     0x00000f05      0x12c startup.o
+                                0xe49 (size before relaxing)
+ .debug_str     0x00001031        0x7 Info.o
+                                 0xce (size before relaxing)
+ .debug_str     0x00001038      0x198 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+                                0xecd (size before relaxing)
+ .debug_str     0x000011d0      0x529 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+                               0x13bc (size before relaxing)
+ .debug_str     0x000016f9      0x186 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+                               0x104b (size before relaxing)
+ .debug_str     0x0000187f      0x5ce ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+                               0x133a (size before relaxing)
+ .debug_str     0x00001e4d      0x498 ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+                               0x1565 (size before relaxing)
+ .debug_str     0x000022e5       0x87 ../Libraries/STM32F4-Discovery/src/fonts.o
+                                0x1e9 (size before relaxing)
+
+.comment        0x00000000       0x4d
+ .comment       0x00000000       0x4d main.o
+                                 0x4e (size before relaxing)
+ .comment       0x0000004d       0x4e startup.o
+ .comment       0x0000004d       0x4e Info.o
+ .comment       0x0000004d       0x4e ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+ .comment       0x0000004d       0x4e ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .comment       0x0000004d       0x4e ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .comment       0x0000004d       0x4e ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .comment       0x0000004d       0x4e ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ .comment       0x0000004d       0x4e ../Libraries/STM32F4-Discovery/src/fonts.o
+
+.ARM.attributes
+                0x00000000       0x32
+ .ARM.attributes
+                0x00000000       0x32 main.o
+ .ARM.attributes
+                0x00000032       0x32 startup.o
+ .ARM.attributes
+                0x00000064       0x37 Info.o
+ .ARM.attributes
+                0x0000009b       0x32 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+ .ARM.attributes
+                0x000000cd       0x32 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .ARM.attributes
+                0x000000ff       0x32 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .ARM.attributes
+                0x00000131       0x32 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .ARM.attributes
+                0x00000163       0x32 ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ .ARM.attributes
+                0x00000195       0x37 ../Libraries/STM32F4-Discovery/src/fonts.o
+ .ARM.attributes
+                0x000001cc       0x1e c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x000001ea       0x1e c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+
+.debug_frame    0x00000000     0x8850
+ .debug_frame   0x00000000     0x10ac main.o
+ .debug_frame   0x000010ac     0x11c0 startup.o
+ .debug_frame   0x0000226c     0x10d4 ../Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
+ .debug_frame   0x00003340     0x172c ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+ .debug_frame   0x00004a6c     0x1294 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+ .debug_frame   0x00005d00     0x1358 ../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+ .debug_frame   0x00007058     0x1688 ../Libraries/STM32F4-Discovery/src/stm32f4_discovery_lcd.o
+ .debug_frame   0x000086e0       0xac c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x0000878c       0xc4 c:/program files (x86)/gnu arm embedded toolchain/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)

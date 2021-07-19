@@ -1,0 +1,22 @@
+10:34:37 **** Incremental Build of configuration Default for project Lab_2 ****
+make all 
+
+-------- begin --------
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb startup_sam3n.c -o startup_sam3n.o
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb main.c -o main.o
+arm-none-eabi-gcc -c -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb ../cm3/SPL/src/pio.c -o ../cm3/SPL/src/pio.o
+arm-none-eabi-gcc -g -I. -I ../cm3/include -I ../cm3/boot/inc -I ../cm3/utility/inc -I ../cm3/SPL/inc -D __SAM3N4C__ -mthumb -mcpu=cortex-m3 -O0 -T flash.ld -ggdb startup_sam3n.o main.o ../cm3/SPL/src/pio.o -nostartfiles -Xlinker -oMMVP_LW1_ATSAM3N4C_TftDisplay_SPI.elf -Xlinker -M -Xlinker -Map=MMVP_LW1_ATSAM3N4C_TftDisplay_SPI.map
+arm-none-eabi-objcopy MMVP_LW1_ATSAM3N4C_TftDisplay_SPI.elf -O ihex MMVP_LW1_ATSAM3N4C_TftDisplay_SPI.hex
+arm-none-eabi-size --format=berkeley MMVP_LW1_ATSAM3N4C_TftDisplay_SPI.elf
+   text	   data	    bss	    dec	    hex	filename
+   2320	     24	   2056	   4400	   1130	MMVP_LW1_ATSAM3N4C_TftDisplay_SPI.elf
+Errors: none
+
+------ Moving output files into Debug folder ------
+
+mv -f startup_sam3n.o main.o ../cm3/SPL/src/pio.o Debug
+mv -f MMVP_LW1_ATSAM3N4C_TftDisplay_SPI.elf Debug
+mv -f MMVP_LW1_ATSAM3N4C_TftDisplay_SPI.hex Debug
+mv -f MMVP_LW1_ATSAM3N4C_TftDisplay_SPI.map Debug
+-------- end --------
+
